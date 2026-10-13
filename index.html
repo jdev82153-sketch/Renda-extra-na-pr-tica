@@ -1,372 +1,598 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Renda Extra na Prática | Guia Digital</title>
+  <title>Renda Extra na Prática | Comece hoje</title>
+  <meta name="description" content="Descubra ideias de renda extra, aprenda a buscar clientes e conheça oportunidades digitais com o e-book Renda Extra na Prática.">
+  <meta name="theme-color" content="#080b08">
 
-    <meta name="description" content="Descubra ideias de renda extra, estratégias de marketing e vendas, modelos de mensagens e um plano de ação de 30 dias.">
+  <link rel="stylesheet" href="style.css">
 
-    <meta name="theme-color" content="#0b1020">
+  <style>
+    :root {
+      --bg: #080b08;
+      --surface: #111611;
+      --green: #65f52c;
+      --green-dark: #3ec51b;
+      --white: #f7f9f6;
+      --muted: #b3bdb0;
+      --border: rgba(255,255,255,.1);
+    }
 
-    <link rel="stylesheet" href="style.css">
+    * { box-sizing: border-box; }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    img { max-width: 100%; }
+
+    .container {
+      width: min(1120px, 90%);
+      margin-inline: auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8,11,8,.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: block;
+      width: 150px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .nav-link {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .nav-link:hover { color: var(--green); }
+
+    .hero {
+      padding: 78px 0 88px;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 78% 28%, rgba(75,220,35,.13), transparent 38%),
+        var(--bg);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--green);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      font-size: clamp(2.5rem, 5.3vw, 4.5rem);
+      line-height: 1.03;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    .green { color: var(--green); }
+
+    .hero-copy {
+      max-width: 590px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 28px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 28px 0 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 14px 22px;
+      border-radius: 8px;
+      font-size: .95rem;
+      font-weight: 800;
+      text-align: center;
+      transition: transform .2s, background .2s;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: var(--green);
+      color: #071004;
+    }
+
+    .btn-primary:hover { background: #83ff55; }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: var(--white);
+      background: rgba(255,255,255,.035);
+    }
+
+    .fine-print {
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .book-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .book-image {
+      display: block;
+      width: 100%;
+      max-width: 430px;
+      border-radius: 14px;
+      box-shadow: 0 24px 75px rgba(0,0,0,.45);
+    }
+
+    .section { padding: 76px 0; }
+
+    .section-alt {
+      background: #0d120d;
+      border-block: 1px solid var(--border);
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p { color: var(--muted); }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .feature {
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .feature-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 16px;
+      border-radius: 10px;
+      background: rgba(101,245,44,.12);
+      color: var(--green);
+      font-size: 1.3rem;
+      font-weight: 800;
+    }
+
+    .feature h3 { font-size: 1.08rem; margin-bottom: 9px; }
+
+    .feature p {
+      color: var(--muted);
+      font-size: .94rem;
+      margin-bottom: 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-grid h2 {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      line-height: 1.15;
+    }
+
+    .about-grid p { color: var(--muted); }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0;
+    }
+
+    .check-list li {
+      position: relative;
+      padding: 8px 0 8px 30px;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .about-panel {
+      padding: 30px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .about-panel h3 { font-size: 1.3rem; }
+
+    .offer-card {
+      max-width: 620px;
+      margin: auto;
+      padding: 38px;
+      text-align: center;
+      background: linear-gradient(150deg, #151e13, #0d120d);
+      border: 1px solid rgba(101,245,44,.4);
+      border-radius: 16px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.2);
+    }
+
+    .offer-card h2 {
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.15;
+    }
+
+    .price {
+      margin: 22px 0 4px;
+      font-size: clamp(2.8rem, 7vw, 4rem);
+      font-weight: 900;
+      letter-spacing: -2px;
+      color: var(--green);
+      line-height: 1.1;
+    }
+
+    .price-note { color: var(--muted); font-size: .9rem; }
+
+    .offer-card .actions { justify-content: center; }
+
+    .faq-list {
+      max-width: 760px;
+      margin: auto;
+    }
+
+    details {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    details p {
+      color: var(--muted);
+      margin: 12px 0 0;
+    }
+
+    .footer {
+      padding: 32px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .footer p { margin: 7px 0; }
+
+    .reveal {
+      animation: appear .7s ease both;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 800px) {
+      .hero { padding: 55px 0 65px; }
+      .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 35px; }
+      .hero-grid { text-align: center; }
+      .hero-copy { margin-inline: auto; }
+      .actions { justify-content: center; }
+      .book-image { max-width: 340px; }
+      .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .about-grid { gap: 24px; }
+      .section { padding: 58px 0; }
+    }
+
+    @media (max-width: 520px) {
+      .nav { min-height: 68px; }
+      .logo { width: 118px; }
+      .nav-link { font-size: .8rem; }
+      h1 { letter-spacing: -1.3px; }
+      .features { grid-template-columns: 1fr; }
+      .feature { padding: 22px; }
+      .btn { width: 100%; }
+      .offer-card { padding: 28px 20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <header class="header">
+    <div class="container nav">
+      <a href="#" aria-label="Renda Extra na Prática - início">
+        <img
+          src="F957B3EA-CA40-4B4C-887A-0377BE372C26.png"
+          alt="Renda Extra na Prática"
+          class="logo"
+        >
+      </a>
+      <a class="nav-link" href="#conteudo">Conheça o e-book</a>
+    </div>
+  </header>
 
-    <header class="header">
-        <div class="container nav">
-            <a href="#inicio" class="logo">
-                <span class="logo-icon">R</span>
-                <span>Renda Extra<span class="logo-highlight">.</span></span>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="eyebrow">Seu próximo passo começa aqui</span>
+          <h1>
+            Transforme suas ideias em
+            <span class="green">oportunidades.</span>
+          </h1>
+          <p class="hero-copy">
+            Um guia prático para conhecer possibilidades de renda extra,
+            explorar serviços digitais e organizar os primeiros passos
+            para tirar suas ideias do papel.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn-primary"
+               href="https://pay.kiwify.com.br/y5krdZs"
+               target="_blank" rel="noopener noreferrer">
+              Comprar pela Kiwify
             </a>
-
-            <a href="#comprar" class="nav-button">Quero conhecer o guia</a>
-        </div>
-    </header>
-
-    <main>
-
-        <section class="hero" id="inicio">
-            <div class="hero-glow glow-one"></div>
-            <div class="hero-glow glow-two"></div>
-
-            <div class="container hero-grid">
-                <div class="hero-content reveal">
-
-                    <div class="eyebrow">
-                        <span class="status-dot"></span>
-                        GUIA DIGITAL PARA INICIANTES
-                    </div>
-
-                    <h1>
-                        Sua próxima oportunidade pode começar com
-                        <span>uma ideia.</span>
-                    </h1>
-
-                    <p class="hero-description">
-                        Um guia prático para explorar possibilidades de renda extra,
-                        aprender a divulgar seus serviços e produtos e dar os primeiros
-                        passos com mais organização.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a href="#comprar" class="button button-primary">
-                            Quero acessar o guia
-                            <span aria-hidden="true">→</span>
-                        </a>
-
-                        <a href="#conteudo" class="button button-secondary">
-                            Ver o que vou aprender
-                        </a>
-                    </div>
-
-                    <div class="hero-note">
-                        <span class="check-icon">✓</span>
-                        Leitura digital · Acesso após confirmação do pagamento
-                    </div>
-                </div>
-
-                <div class="hero-visual reveal">
-                    <div class="book-scene">
-                        <div class="book-shadow"></div>
-
-                        <div class="book">
-                            <div class="book-topline">GUIA PRÁTICO · EDIÇÃO DIGITAL</div>
-
-                            <div class="book-symbol">
-                                <span>R$</span>
-                                <div class="symbol-line"></div>
-                                <div class="symbol-line short"></div>
-                            </div>
-
-                            <h2>RENDA<br>EXTRA NA<br><span>PRÁTICA.</span></h2>
-
-                            <p>IDEIAS, MARKETING E AÇÃO</p>
-
-                            <div class="book-bottom">
-                                <span>SEU PRÓXIMO PASSO COMEÇA AQUI</span>
-                                <span class="book-number">01</span>
-                            </div>
-                        </div>
-
-                        <div class="floating-card floating-card-top">
-                            <span class="floating-icon">↗</span>
-                            <div>
-                                <strong>Novas possibilidades</strong>
-                                <small>Conhecimento para começar</small>
-                            </div>
-                        </div>
-
-                        <div class="floating-card floating-card-bottom">
-                            <span class="floating-icon green">✓</span>
-                            <div>
-                                <strong>Plano de 30 dias</strong>
-                                <small>Organize suas próximas ações</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="benefits section" id="conteudo">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <span class="section-label">O QUE VOCÊ VAI ENCONTRAR</span>
-                    <h2>Mais clareza para transformar<br>ideias em <span>ações.</span></h2>
-                    <p>Conteúdo direto ao ponto para você estudar, praticar e organizar seus próximos passos.</p>
-                </div>
-
-                <div class="benefit-grid">
-
-                    <article class="benefit-card reveal">
-                        <div class="benefit-icon">✦</div>
-                        <h3>Ideias de renda extra</h3>
-                        <p>Conheça possibilidades com serviços, produtos digitais, revenda e oportunidades locais.</p>
-                        <span class="card-number">01</span>
-                    </article>
-
-                    <article class="benefit-card reveal">
-                        <div class="benefit-icon">↗</div>
-                        <h3>Marketing e vendas</h3>
-                        <p>Aprenda fundamentos para apresentar uma oferta, divulgar seu trabalho e conversar com potenciais clientes.</p>
-                        <span class="card-number">02</span>
-                    </article>
-
-                    <article class="benefit-card reveal">
-                        <div class="benefit-icon">⌘</div>
-                        <h3>Modelos práticos</h3>
-                        <p>Use exemplos de mensagens, exercícios e checklists para sair da teoria e começar a agir.</p>
-                        <span class="card-number">03</span>
-                    </article>
-
-                    <article class="benefit-card reveal">
-                        <div class="benefit-icon">◷</div>
-                        <h3>Plano de ação</h3>
-                        <p>Organize suas tarefas em um plano de 30 dias e acompanhe o que precisa fazer.</p>
-                        <span class="card-number">04</span>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <section class="about section">
-            <div class="container about-grid">
-
-                <div class="about-visual reveal">
-                    <div class="about-panel">
-                        <span class="about-panel-label">SEU GUIA DE AÇÃO</span>
-
-                        <div class="progress-item">
-                            <div class="progress-heading">
-                                <span>Definir uma ideia</span>
-                                <span>01</span>
-                            </div>
-                            <div class="progress-track"><span style="width: 90%"></span></div>
-                        </div>
-
-                        <div class="progress-item">
-                            <div class="progress-heading">
-                                <span>Planejar sua oferta</span>
-                                <span>02</span>
-                            </div>
-                            <div class="progress-track"><span style="width: 70%"></span></div>
-                        </div>
-
-                        <div class="progress-item">
-                            <div class="progress-heading">
-                                <span>Divulgar e testar</span>
-                                <span>03</span>
-                            </div>
-                            <div class="progress-track"><span style="width: 50%"></span></div>
-                        </div>
-
-                        <div class="about-quote">
-                            <span>“</span>
-                            Comece com o que você tem. Aprenda com cada tentativa.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="about-content reveal">
-                    <span class="section-label">FEITO PARA COMEÇAR</span>
-                    <h2>Você não precisa saber tudo para dar o <span>primeiro passo.</span></h2>
-
-                    <p>
-                        O Renda Extra na Prática foi pensado para quem quer explorar
-                        oportunidades, desenvolver habilidades comerciais e construir
-                        uma rotina mais organizada.
-                    </p>
-
-                    <ul class="check-list">
-                        <li><span>✓</span> Linguagem acessível para iniciantes</li>
-                        <li><span>✓</span> Exemplos e atividades para praticar</li>
-                        <li><span>✓</span> Orientações para divulgar produtos e serviços</li>
-                        <li><span>✓</span> Organização financeira básica</li>
-                        <li><span>✓</span> Sugestões de uso de ferramentas de IA</li>
-                    </ul>
-
-                    <a href="#comprar" class="text-link">Quero conhecer o material <span>→</span></a>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="plan section">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <span class="section-label">UM PASSO DE CADA VEZ</span>
-                    <h2>Transforme o aprendizado<br>em um <span>plano possível.</span></h2>
-                    <p>O guia inclui uma sugestão de roteiro para ajudar você a organizar sua execução.</p>
-                </div>
-
-                <div class="plan-grid">
-                    <div class="plan-item reveal">
-                        <span class="plan-week">SEMANA 01</span>
-                        <div class="plan-line"></div>
-                        <h3>Explore</h3>
-                        <p>Liste habilidades, recursos disponíveis e ideias que fazem sentido para você.</p>
-                    </div>
-
-                    <div class="plan-item reveal">
-                        <span class="plan-week">SEMANA 02</span>
-                        <div class="plan-line"></div>
-                        <h3>Prepare</h3>
-                        <p>Escolha uma ideia, defina uma oferta e organize como vai apresentá-la.</p>
-                    </div>
-
-                    <div class="plan-item reveal">
-                        <span class="plan-week">SEMANA 03</span>
-                        <div class="plan-line"></div>
-                        <h3>Divulgue</h3>
-                        <p>Teste abordagens, converse com potenciais clientes e registre as respostas.</p>
-                    </div>
-
-                    <div class="plan-item reveal">
-                        <span class="plan-week">SEMANA 04</span>
-                        <div class="plan-line"></div>
-                        <h3>Ajuste</h3>
-                        <p>Avalie o que funcionou, aprenda com os resultados e planeje os próximos passos.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="offer section" id="comprar">
-            <div class="container">
-                <div class="offer-card reveal">
-
-                    <div class="offer-copy">
-                        <span class="offer-label">
-                            <span class="status-dot"></span>
-                            SEU PRÓXIMO PASSO
-                        </span>
-
-                        <h2>Comece a construir suas possibilidades.</h2>
-
-                        <p>
-                            Tenha o material digital como apoio para estudar ideias,
-                            organizar suas ações e praticar estratégias de divulgação e vendas.
-                        </p>
-
-                        <div class="offer-features">
-                            <span><b>✓</b> Guia digital em PDF</span>
-                            <span><b>✓</b> Exercícios e checklists</span>
-                            <span><b>✓</b> Plano de ação de 30 dias</span>
-                        </div>
-                    </div>
-
-                    <div class="price-box">
-                        <span class="price-caption">VALOR DO GUIA</span>
-
-                        <div class="price">
-                            <span class="currency">R$</span>
-                            <span class="price-value">17,90</span>
-                        </div>
-
-                        <span class="payment-caption">Pagamento único</span>
-
-                        <a href="#" class="button button-primary checkout-button" data-checkout="kiwify">
-                            Comprar pela Kiwify <span>→</span>
-                        </a>
-
-                        <a href="#" class="button button-cakto checkout-button" data-checkout="cakto">
-                            Comprar pela Cakto <span>→</span>
-                        </a>
-
-                        <div class="secure-note">
-                            <span>🔒</span>
-                            Pagamento processado na plataforma escolhida
-                        </div>
-
-                        <p class="checkout-warning" id="checkout-warning" hidden>
-                            O checkout ainda não foi configurado. Volte em breve.
-                        </p>
-                    </div>
-
-                </div>
-
-                <p class="disclaimer">
-                    <strong>Importante:</strong> este material é educativo. A renda depende
-                    de diversos fatores, como experiência, dedicação, mercado, custos e execução.
-                    Não há garantia de ganhos ou resultados financeiros.
-                </p>
-            </div>
-        </section>
-
-        <section class="faq section">
-            <div class="container faq-container">
-                <div class="section-heading reveal">
-                    <span class="section-label">DÚVIDAS FREQUENTES</span>
-                    <h2>Antes de <span>começar.</span></h2>
-                </div>
-
-                <details class="faq-item reveal">
-                    <summary>Como recebo o material?</summary>
-                    <p>Após a confirmação do pagamento, o acesso ao PDF será disponibilizado conforme o método de entrega configurado na plataforma de compra.</p>
-                </details>
-
-                <details class="faq-item reveal">
-                    <summary>O guia garante que vou ganhar dinheiro?</summary>
-                    <p>Não. O material apresenta ideias e orientações educativas, mas resultados financeiros dependem de vários fatores e não podem ser garantidos.</p>
-                </details>
-
-                <details class="faq-item reveal">
-                    <summary>Preciso ter experiência com vendas?</summary>
-                    <p>Não necessariamente. O conteúdo foi pensado para iniciantes, com explicações, exemplos e atividades para praticar.</p>
-                </details>
-
-                <details class="faq-item reveal">
-                    <summary>Posso aplicar tudo imediatamente?</summary>
-                    <p>Você pode começar estudando o material e escolhendo ações adequadas à sua realidade, aos seus recursos e às regras aplicáveis à atividade escolhida.</p>
-                </details>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="footer">
-        <div class="container footer-content">
-            <a href="#inicio" class="logo">
-                <span class="logo-icon">R</span>
-                <span>Renda Extra<span class="logo-highlight">.</span></span>
+            <a class="btn btn-secondary"
+               href="https://pay.cakto.com.br/vt83fuu_1197482"
+               target="_blank" rel="noopener noreferrer">
+              Comprar pela Cakto
             </a>
+          </div>
 
-            <p>Conteúdo educativo para aprender, planejar e agir.</p>
-
-            <span class="copyright">
-                © <span id="current-year"></span> Renda Extra na Prática.
-            </span>
+          <p class="fine-print">
+            E-book digital em PDF · R$ 17,90
+          </p>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <div class="book-wrap reveal">
+          <img
+            class="book-image"
+            src="https://jdev82153-sketch.github.io/Renda-extra-na-pr-tica/Ebook_Renda_Extra_na_Pratica_Rev2.pdf"
+            alt="E-book Renda Extra na Prática"
+            onerror="this.style.display='none'"
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="conteudo">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Conteúdo prático</span>
+          <h2>Ideias para começar com os recursos que você tem</h2>
+          <p>
+            Aprenda conceitos, conheça caminhos possíveis e monte um plano
+            para colocar suas ideias em movimento.
+          </p>
+        </div>
+
+        <div class="features">
+          <article class="feature">
+            <div class="feature-icon">01</div>
+            <h3>Ideias de renda extra</h3>
+            <p>Explore alternativas de serviços, vendas e atividades para iniciantes.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon">02</div>
+            <h3>Busca por clientes</h3>
+            <p>Conheça formas de apresentar seus serviços e conversar com possíveis clientes.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon">03</div>
+            <h3>Oportunidades digitais</h3>
+            <p>Descubra maneiras de usar a internet para divulgar serviços e produtos.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon">04</div>
+            <h3>Ferramentas de IA</h3>
+            <p>Veja como ferramentas digitais podem apoiar tarefas e organizar ideias.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon">05</div>
+            <h3>Organização financeira</h3>
+            <p>Aprenda noções para acompanhar seu dinheiro e definir metas realistas.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon">06</div>
+            <h3>Plano de 30 dias</h3>
+            <p>Use um roteiro de ação para transformar aprendizado em passos concretos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container about-grid">
+        <div>
+          <span class="eyebrow">Feito para iniciantes</span>
+          <h2>Menos dúvida. <span class="green">Mais direção.</span></h2>
+          <p>
+            Você não precisa dominar tudo para começar a aprender.
+            O importante é conhecer as possibilidades, escolher um caminho
+            adequado à sua realidade e agir com planejamento.
+          </p>
+          <ul class="check-list">
+            <li>Conteúdo organizado para quem está começando.</li>
+            <li>Exemplos, exercícios e orientações práticas.</li>
+            <li>Ideias para avaliar e adaptar à sua realidade.</li>
+            <li>Um plano de ação para orientar seus próximos passos.</li>
+          </ul>
+        </div>
+
+        <div class="about-panel">
+          <h3>Para quem é este e-book?</h3>
+          <p>
+            Para estudantes, iniciantes e pessoas que querem explorar
+            possibilidades de complementar a renda ou desenvolver novas
+            habilidades.
+          </p>
+          <p>
+            <strong class="green">Importante:</strong> os resultados variam
+            conforme as habilidades, o esforço, as condições e as escolhas
+            de cada pessoa. Não há garantia de ganhos financeiros.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="comprar">
+      <div class="container">
+        <div class="offer-card">
+          <span class="eyebrow">Comece no seu ritmo</span>
+          <h2>Seu próximo passo começa com <span class="green">uma decisão.</span></h2>
+          <p>
+            Conheça o guia Renda Extra na Prática e escolha a plataforma
+            para realizar sua compra.
+          </p>
+
+          <div class="price">R$ 17,90</div>
+          <p class="price-note">Produto digital · E-book em PDF</p>
+
+          <div class="actions">
+            <a class="btn btn-primary"
+               href="https://pay.kiwify.com.br/y5krdZs"
+               target="_blank" rel="noopener noreferrer">
+              Comprar pela Kiwify
+            </a>
+            <a class="btn btn-secondary"
+               href="https://pay.cakto.com.br/vt83fuu_1197482"
+               target="_blank" rel="noopener noreferrer">
+              Comprar pela Cakto
+            </a>
+          </div>
+
+          <p class="fine-print">
+            Confira as informações e as condições no checkout escolhido.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Dúvidas frequentes</span>
+          <h2>Antes de comprar</h2>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>O produto é físico?</summary>
+            <p>Não. É um produto digital em formato PDF.</p>
+          </details>
+
+          <details>
+            <summary>Preciso ter experiência?</summary>
+            <p>O material foi pensado para iniciantes. Você pode estudar o conteúdo e adaptar as ideias à sua realidade.</p>
+          </details>
+
+          <details>
+            <summary>O e-book garante renda?</summary>
+            <p>Não. O material oferece orientações e ideias, mas resultados financeiros não são garantidos.</p>
+          </details>
+
+          <details>
+            <summary>Como faço para comprar?</summary>
+            <p>Use um dos botões desta página para acessar o checkout da Kiwify ou da Cakto e confira as instruções de pagamento e entrega.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p><strong>Renda Extra na Prática</strong></p>
+      <p>Conteúdo educativo. Não há promessa ou garantia de renda.</p>
+      <p>© <span id="year"></span> Renda Extra na Prática.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script src="script.js"></script>
 </body>
 </html>
