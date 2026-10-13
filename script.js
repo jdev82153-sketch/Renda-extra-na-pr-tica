@@ -47,10 +47,12 @@ if ("IntersectionObserver" in window) {
    verdadeiros gerados nas plataformas.
 */
 
+
 const CHECKOUT_URLS = {
-    kiwify: "COLE_AQUI_O_LINK_REAL_DA_KIWIFY",
-    cakto: "COLE_AQUI_O_LINK_REAL_DA_CAKTO"
+    kiwify: "https://pay.kiwify.com.br/y5krdZs",
+    cakto: "https://pay.cakto.com.br/vt83fuu_1197482"
 };
+
 
 /* 4. BOTÕES DE COMPRA */
 
